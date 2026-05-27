@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Code, Copy, ExternalLink } from "lucide-react";
 
@@ -12,6 +13,23 @@ const IFRAME_CODE = `<iframe
 ></iframe>`;
 
 export default function EmbedPage() {
+  const [copied, setCopied] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(IFRAME_CODE);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      alert("Não foi possível copiar. Copie manualmente o código abaixo.");
+    }
+  };
+
   return (
     <div className="space-y-12">
       {/* Hero */}
@@ -62,29 +80,30 @@ export default function EmbedPage() {
         ))}
       </section>
 
-      {/* Pré-visualização do Widget */}
-      <section className="bg-gradient-to-br from-gray-50 to-blue-50/50 rounded-2xl p-6 sm:p-8 border border-blue-100">
-        <h2 className="text-xl font-bold mb-4 text-center">
-          🔍 Pré-visualização do Widget
-        </h2>
-        <div className="max-w-[520px] mx-auto">
-          <iframe
-            src="/embed/rescisao"
-            width="100%"
-            height="750"
-            style={{
-              border: "none",
-              borderRadius: "12px",
-              boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
-            }}
-            title="Pré-visualização da Calculadora de Rescisão"
-          />
-        </div>
-        <p className="text-center text-xs text-gray-400 mt-3">
-          Pré-visualização ao vivo do widget. Os cálculos funcionam
-          normalmente.
-        </p>
-      </section>
+      {/* Pré-visualização do Widget (client-side only) */}
+      {mounted && (
+        <section className="bg-gradient-to-br from-gray-50 to-blue-50/50 rounded-2xl p-6 sm:p-8 border border-blue-100">
+          <h2 className="text-xl font-bold mb-4 text-center">
+            🔍 Pré-visualização do Widget
+          </h2>
+          <div className="max-w-[520px] mx-auto">
+            <iframe
+              src="/embed/rescisao"
+              width="100%"
+              height="750"
+              style={{
+                border: "none",
+                borderRadius: "12px",
+                boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+              }}
+              title="Pré-visualização da Calculadora de Rescisão"
+            />
+          </div>
+          <p className="text-center text-xs text-gray-400 mt-3">
+            Pré-visualização ao vivo do widget.
+          </p>
+        </section>
+      )}
 
       {/* Código iframe */}
       <section className="bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 space-y-6">
@@ -101,13 +120,11 @@ export default function EmbedPage() {
             {IFRAME_CODE}
           </pre>
           <button
-            onClick={() => {
-              navigator.clipboard.writeText(IFRAME_CODE);
-            }}
+            onClick={handleCopy}
             className="absolute top-3 right-3 bg-white/10 hover:bg-white/20 text-white rounded-lg px-3 py-1.5 text-xs font-medium flex items-center gap-1.5 transition-colors"
           >
             <Copy className="w-3.5 h-3.5" />
-            Copiar
+            {copied ? "Copiado!" : "Copiar"}
           </button>
         </div>
 
@@ -122,38 +139,20 @@ export default function EmbedPage() {
         </div>
       </section>
 
-      {/* Perguntas Frequentes */}
+      {/* FAQ */}
       <section className="space-y-4">
         <h2 className="text-2xl font-bold text-center">
           ❓ Perguntas Frequentes
         </h2>
         <div className="space-y-3 max-w-3xl mx-auto">
           {[
-            {
-              p: "O widget é realmente gratuito?",
-              r: "Sim, 100% gratuito. Não há cobrança, limite de uso ou necessidade de cadastro. Você pode usar em quantos sites quiser.",
-            },
-            {
-              p: "Preciso manter o link de atribuição?",
-              r: "Sim. O widget inclui automaticamente um link discreto para o Calculadora Trabalhista no rodapé do resultado. Pedimos que não remova esse link — ele é a única forma de mantermos a ferramenta gratuita.",
-            },
-            {
-              p: "Funciona em qualquer site?",
-              r: "Sim, funciona em qualquer site que suporte iframes: WordPress, Wix, Shopify, HTML puro, etc. Basta colar o código no editor HTML.",
-            },
-            {
-              p: "Os dados do usuário são salvos?",
-              r: "Não. Todo o processamento é feito no navegador do usuário (client-side). Nenhum dado é enviado para nossos servidores.",
-            },
-            {
-              p: "Posso modificar a aparência do widget?",
-              r: "A calculadora mantém a identidade visual do Calculadora Trabalhista. Não oferecemos personalização de cores ou estilos para manter a consistência da ferramenta.",
-            },
+            { p: "O widget é realmente gratuito?", r: "Sim, 100% gratuito. Sem cobrança, limite de uso ou cadastro." },
+            { p: "Preciso manter o link de atribuição?", r: "Sim. O widget inclui um link para o Calculadora Trabalhista no rodapé — não remova." },
+            { p: "Funciona em qualquer site?", r: "Sim, em qualquer site que suporte iframes: WordPress, Wix, Shopify, HTML puro." },
+            { p: "Os dados do usuário são salvos?", r: "Não. Tudo é processado no navegador. Nenhum dado é enviado aos nossos servidores." },
+            { p: "Posso modificar a aparência?", r: "A calculadora mantém a identidade visual do Calculadora Trabalhista." },
           ].map(({ p, r }) => (
-            <div
-              key={p}
-              className="bg-white border border-gray-200 rounded-xl p-4 sm:p-5"
-            >
+            <div key={p} className="bg-white border border-gray-200 rounded-xl p-4 sm:p-5">
               <h3 className="font-semibold text-gray-900 mb-1.5">{p}</h3>
               <p className="text-sm text-gray-600 leading-relaxed">{r}</p>
             </div>
@@ -167,8 +166,7 @@ export default function EmbedPage() {
           🚀 Comece agora — é grátis!
         </h2>
         <p className="text-blue-100 max-w-xl mx-auto text-sm sm:text-base">
-          Copie o código iframe acima e adicione ao seu site em menos de 1
-          minuto. Sem cadastro, sem burocracia.
+          Copie o código iframe e adicione ao seu site em menos de 1 minuto.
         </p>
         <Link
           href="/calculadora-rescisao"
