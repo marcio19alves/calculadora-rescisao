@@ -334,6 +334,14 @@ export default function RootLayout({
                       Política de Privacidade
                     </Link>
                   </li>
+                  <li>
+                    <Link
+                      href="/embed"
+                      className="text-sm hover:text-white transition-colors"
+                    >
+                      Widget Embedável
+                    </Link>
+                  </li>
                 </ul>
               </div>
             </div>
