@@ -16,7 +16,8 @@ import { calcularRescisao, ResultadoRescisao } from "@/lib/rescisao-engine";
 import { DadosRescisao, AvisoPrevio, MotivoRescisao } from "@/lib/taxas-2026";
 import { formatCurrency } from "@/lib/utils";
 import { Calculator, Copy, RefreshCw, Info } from "lucide-react";
-import EmailGate from "@/components/email-gate";
+import EmailGate from "./email-gate";
+import SecaoAfiliados from "./SecaoAfiliados";
 import { useEmailGate } from "@/hooks/useEmailGate";
 
 type MotivoOption = {
@@ -286,7 +287,10 @@ export default function RescisaoEngine() {
       </Card>
 
       {resultado && (
-        <ResultadoCard resultado={resultado} onCopy={handleCopy} />
+        <>
+          <ResultadoCard resultado={resultado} onCopy={handleCopy} />
+          <SecaoAfiliados />
+        </>
       )}
 
       <EmailGate

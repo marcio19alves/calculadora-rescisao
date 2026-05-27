@@ -342,6 +342,14 @@ export default function RootLayout({
                       Widget Embedável
                     </Link>
                   </li>
+                  <li>
+                    <Link
+                      href="/recomendados"
+                      className="text-sm hover:text-white transition-colors"
+                    >
+                      🛒 Recomendados
+                    </Link>
+                  </li>
                 </ul>
               </div>
             </div>
