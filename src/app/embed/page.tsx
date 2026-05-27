@@ -1,17 +1,7 @@
-import type { Metadata } from "next";
-import Link from "next/link";
-import { Code, Copy, ExternalLink, Check } from "lucide-react";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Widget Embedável — Calculadora de Rescisão | Calculadora Trabalhista",
-  description:
-    "Adicione a calculadora de rescisão CLT gratuitamente ao seu site de RH, contabilidade ou advocacia trabalhista. Widget iframe embedável com link de atribuição.",
-  openGraph: {
-    title: "Widget Embedável — Calculadora de Rescisão",
-    description:
-      "Adicione a calculadora de rescisão CLT gratuitamente ao seu site. Widget iframe embedável.",
-  },
-};
+import Link from "next/link";
+import { Code, Copy, ExternalLink } from "lucide-react";
 
 const IFRAME_CODE = `<iframe 
   src="https://calculadoratrabalhista.net.br/embed/rescisao" 
