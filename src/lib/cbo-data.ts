@@ -247,4 +247,76 @@ export const cargos: CargoInfo[] = [
     descricao:
       "Copeiras atuam em empresas, hotéis e hospitais com jornada de 6 a 8 horas. Na rescisão, adicional de insalubridade (grau médio) e horas extras habituais são verbas comuns que devem fazer parte do acerto trabalhista.",
   },
+  {
+    slug: "auxiliar-de-cozinha",
+    nome: "Auxiliar de Cozinha",
+    nomeMasculino: "auxiliar de cozinha",
+    nomeFeminino: "auxiliar de cozinha",
+    descricao:
+      "Auxiliares de cozinha trabalham em restaurantes, hotéis e hospitais com jornada de 6 a 8 horas. Na rescisão, adicional de insalubridade de 20% sobre o salário mínimo e horas extras habituais são direitos comuns na categoria.",
+  },
+  {
+    slug: "faxineiro",
+    nome: "Faxineiro",
+    nomeMasculino: "faxineiro",
+    nomeFeminino: "faxineira",
+    descricao:
+      "Faxineiros atuam na limpeza de empresas, condomínios e residências. Na rescisão, adicional de insalubridade de 20% (grau médio) sobre o salário mínimo é um direito comum que deve ser incluído no cálculo trabalhista.",
+  },
+  {
+    slug: "carpinteiro",
+    nome: "Carpinteiro",
+    nomeMasculino: "carpinteiro",
+    nomeFeminino: "carpinteira",
+    descricao:
+      "Carpinteiros atuam na construção civil com jornada de 8 horas. Na rescisão, adicional de periculosidade e insalubridade são comuns na categoria, além de horas extras habituais em períodos de obra intensa.",
+  },
+  {
+    slug: "jardineiro",
+    nome: "Jardineiro",
+    nomeMasculino: "jardineiro",
+    nomeFeminino: "jardineira",
+    descricao:
+      "Jardineiros trabalham na manutenção de áreas verdes em condomínios, empresas e residências. Na rescisão, adicional de insalubridade de 20% sobre o salário mínimo e horas extras são verbas comuns na categoria.",
+  },
+  {
+    slug: "zelador",
+    nome: "Zelador",
+    nomeMasculino: "zelador",
+    nomeFeminino: "zeladora",
+    descricao:
+      "Zeladores trabalham em condomínios com jornada de 8 horas ou escala 6x1. Na rescisão, adicional noturno e horas extras habituais são comuns, além do vale-transporte que integra o salário para algumas verbas.",
+  },
+  {
+    slug: "padeiro",
+    nome: "Padeiro",
+    nomeMasculino: "padeiro",
+    nomeFeminino: "padeira",
+    descricao:
+      "Padeiros trabalham em padarias e confeitarias com jornada noturna frequente. Na rescisão, adicional noturno de 20% e horas extras habituais são direitos comuns, além do adicional de insalubridade por trabalho em ambiente com altas temperaturas.",
+  },
+  {
+    slug: "seguranca",
+    nome: "Segurança",
+    nomeMasculino: "segurança",
+    nomeFeminino: "segurança",
+    descricao:
+      "Seguranças patrimoniais trabalham em escala 12x36 com frequente adicional noturno. Na rescisão, adicional de periculosidade de 30% sobre o salário base integra todas as verbas, incluindo FGTS e férias.",
+  },
+  {
+    slug: "eletricista",
+    nome: "Eletricista",
+    nomeMasculino: "eletricista",
+    nomeFeminino: "eletricista",
+    descricao:
+      "Eletricistas atuam na construção civil e manutenção predial. Na rescisão, adicional de periculosidade de 30% sobre o salário base e horas extras habituais são verbas que devem ser incluídas no cálculo trabalhista.",
+  },
+  {
+    slug: "mecanico",
+    nome: "Mecânico",
+    nomeMasculino: "mecânico",
+    nomeFeminino: "mecânica",
+    descricao:
+      "Mecânicos trabalham em oficinas e concessionárias com jornada de 8 horas. Na rescisão, adicional de insalubridade de 20% (grau médio) por exposição a óleos e graxas e horas extras habituais são direitos comuns.",
+  },
 ];
