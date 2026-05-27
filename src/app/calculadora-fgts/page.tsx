@@ -1,9 +1,10 @@
 "use client";
-
+import Breadcrumbs from "@/components/breadcrumbs";
 import { useState } from "react";
 import { formatCurrency } from "@/lib/utils";
 import { Calculator, PiggyBank, FileText, AlertTriangle } from "lucide-react";
 import Link from "next/link";
+import ShareButtons from "@/components/ShareButtons";
 
 export default function CalculadoraFGTS() {
   const [saldo, setSaldo] = useState("");
@@ -62,7 +63,7 @@ export default function CalculadoraFGTS() {
 
   return (
     <div className="space-y-8">
-      {/* JSON-LD Schemas */}
+      <Breadcrumbs items={[{label:'Início',href:'/'},{label:'FGTS'}]} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -145,7 +146,7 @@ export default function CalculadoraFGTS() {
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
             name: "Calculadora de FGTS com Multa 40%",
-            url: "https://calcularrescisao.com.br/calculadora-fgts",
+            url: "https://calculadoratrabalhista.net.br/calculadora-fgts",
             applicationCategory: "FinanceApplication",
             operatingSystem: "Web",
             description:
@@ -679,6 +680,9 @@ export default function CalculadoraFGTS() {
           </Link>
         </div>
       </section>
+      <div className="mt-8 pt-6 border-t border-gray-200">
+        <ShareButtons title="Calculadora de FGTS - Calculadora Trabalhista" />
+      </div>
     </div>
   );
 }

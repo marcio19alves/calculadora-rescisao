@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -16,6 +16,8 @@ import { calcularRescisao, ResultadoRescisao } from "@/lib/rescisao-engine";
 import { DadosRescisao, AvisoPrevio, MotivoRescisao } from "@/lib/taxas-2026";
 import { formatCurrency } from "@/lib/utils";
 import { Calculator, Copy, RefreshCw, Info } from "lucide-react";
+import EmailGate from "@/components/email-gate";
+import { useEmailGate } from "@/hooks/useEmailGate";
 
 type MotivoOption = {
   value: MotivoRescisao;
@@ -50,6 +52,9 @@ export default function RescisaoEngine() {
   const [saldoFGTS, setSaldoFGTS] = useState("");
   const [resultado, setResultado] = useState<ResultadoRescisao | null>(null);
   const [erro, setErro] = useState("");
+  const [showGate, setShowGate] = useState(false);
+  const { email } = useEmailGate();
+  const pendingCalc = useRef<(() => void) | null>(null);
 
   function handleCalcular() {
     setErro("");
@@ -65,6 +70,18 @@ export default function RescisaoEngine() {
       return;
     }
 
+    // If user already has email saved, calculate directly
+    if (email) {
+      runCalculation(salarioNum);
+      return;
+    }
+
+    // Store the calculation for later, show gate first
+    pendingCalc.current = () => runCalculation(salarioNum);
+    setShowGate(true);
+  }
+
+  function runCalculation(salarioNum: number) {
     const dados: DadosRescisao = {
       dataAdmissao: new Date(dataAdmissao + "T12:00:00"),
       dataDemissao: new Date(dataDemissao + "T12:00:00"),
@@ -93,12 +110,27 @@ export default function RescisaoEngine() {
     setSaldoFGTS("");
     setResultado(null);
     setErro("");
+    setShowGate(false);
+    pendingCalc.current = null;
   }
 
   function handleCopy() {
     if (!resultado) return;
     const texto = gerarTextoResultado(resultado);
     navigator.clipboard.writeText(texto);
+  }
+
+  function handleGateClose() {
+    setShowGate(false);
+    // Execute pending calculation even if gate was dismissed
+    if (pendingCalc.current) {
+      pendingCalc.current();
+      pendingCalc.current = null;
+    }
+  }
+
+  function handleGateEmailSaved() {
+    pendingCalc.current = null;
   }
 
   return (
@@ -256,6 +288,12 @@ export default function RescisaoEngine() {
       {resultado && (
         <ResultadoCard resultado={resultado} onCopy={handleCopy} />
       )}
+
+      <EmailGate
+        open={showGate}
+        onClose={handleGateClose}
+        onEmailSaved={handleGateEmailSaved}
+      />
     </div>
   );
 }

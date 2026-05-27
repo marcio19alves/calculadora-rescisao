@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ShareButtons from "@/components/ShareButtons";
 
 export const metadata: Metadata = {
-  title: "Sobre | CalcularRescisao",
+  title: "Sobre | Calculadora Trabalhista",
   description:
-    "Conheça o CalcularRescisao — site de calculadoras trabalhistas gratuitas. Nossa missão é ajudar trabalhadores brasileiros a calcular seus direitos de forma simples, rápida e 100% gratuita.",
+    "Conheça o Calculadora Trabalhista — site de calculadoras trabalhistas gratuitas. Nossa missão é ajudar trabalhadores brasileiros a calcular seus direitos de forma simples, rápida e 100% gratuita.",
   openGraph: {
-    title: "Sobre o CalcularRescisao",
+    title: "Sobre o Calculadora Trabalhista",
     description:
       "Conheça nossa história e missão: calculadoras trabalhistas gratuitas para todos os brasileiros.",
   },
@@ -44,7 +45,7 @@ export default function SobrePage() {
           <span className="text-3xl">⚖️</span>
         </div>
         <h1 className="text-3xl sm:text-4xl font-extrabold">
-          Sobre o <span className="text-blue-600">CalcularRescisao</span>
+          Sobre o <span className="text-blue-600">Calculadora Trabalhista</span>
         </h1>
         <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
           Calculadoras trabalhistas online e gratuitas para o trabalhador
@@ -56,7 +57,7 @@ export default function SobrePage() {
       <section className="bg-white border border-gray-200 rounded-2xl p-8 space-y-4">
         <h2 className="text-2xl font-bold">Nossa História</h2>
         <p className="text-gray-600 leading-relaxed">
-          O <strong>CalcularRescisao</strong> nasceu de uma necessidade real:
+          O <strong>Calculadora Trabalhista</strong> nasceu de uma necessidade real:
           milhões de trabalhadores brasileiros são demitidos todos os anos e
           muitos ficam perdidos na hora de calcular o valor da rescisão.
         </p>
@@ -139,6 +140,10 @@ export default function SobrePage() {
         >
           Calcular minha rescisão agora →
         </Link>
+      </div>
+
+      <div className="mt-8 pt-6 border-t border-gray-200">
+        <ShareButtons title="Sobre Nós - Calculadora Trabalhista" />
       </div>
     </div>
   );

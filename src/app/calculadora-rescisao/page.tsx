@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import Breadcrumbs from "@/components/breadcrumbs";
 import RescisaoEngine from "@/components/rescisao-client";
 import { Calculator, FileText, AlertTriangle } from "lucide-react";
 import Link from "next/link";
+import ShareButtons from "@/components/ShareButtons";
 
 export const metadata: Metadata = {
   title: "Calculadora de Rescisão CLT Grátis Online 2025/2026",
@@ -105,11 +107,56 @@ const faqSchema = {
   ],
 };
 
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "Como calcular a rescisão trabalhista CLT em 6 passos",
+  description: "Guia passo a passo para calcular a rescisão de contrato de trabalho CLT com todas as verbas rescisórias: saldo de salário, aviso prévio, férias, 13º, FGTS e multa de 40%.",
+  step: [
+    {
+      "@type": "HowToStep",
+      position: 1,
+      name: "Calcule o saldo de salário",
+      text: "Divida o salário por 30 e multiplique pelos dias trabalhados no mês da demissão. Este é o saldo de salário a receber.",
+    },
+    {
+      "@type": "HowToStep",
+      position: 2,
+      name: "Calcule o aviso prévio",
+      text: "Considere 30 dias de aviso prévio + 3 dias para cada ano completo de trabalho, limitado a 90 dias no total. O aviso pode ser indenizado ou trabalhado.",
+    },
+    {
+      "@type": "HowToStep",
+      position: 3,
+      name: "Calcule as férias vencidas e proporcionais",
+      text: "Férias vencidas: salário + 1/3 constitucional. Férias proporcionais: (salário / 12 × meses trabalhados no período aquisitivo) + 1/3 constitucional.",
+    },
+    {
+      "@type": "HowToStep",
+      position: 4,
+      name: "Calcule o 13º salário proporcional",
+      text: "Divida o salário por 12 e multiplique pelos meses trabalhados no ano da demissão. Cada fração igual ou superior a 15 dias conta como 1 mês.",
+    },
+    {
+      "@type": "HowToStep",
+      position: 5,
+      name: "Calcule o FGTS e a multa de 40%",
+      text: "Calcule 8% do salário mensal para depósitos de FGTS. Na demissão sem justa causa, adicione multa de 40% sobre o saldo total do FGTS. Na rescisão por comum acordo, a multa é de 20%.",
+    },
+    {
+      "@type": "HowToStep",
+      position: 6,
+      name: "Aplique os descontos de INSS e IRRF",
+      text: "Sobre as verbas rescisórias, aplique os descontos de INSS (tabela progressiva) e IRRF (tabela progressiva com deduções). O 1/3 de férias não sofre desconto de INSS.",
+    },
+  ],
+};
+
 const softwareSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   name: "Calculadora de Rescisão CLT",
-  url: "https://calcularrescisao.com.br/calculadora-rescisao",
+  url: "https://calculadoratrabalhista.net.br/calculadora-rescisao",
   applicationCategory: "FinanceApplication",
   operatingSystem: "Web",
   description:
@@ -124,6 +171,7 @@ const softwareSchema = {
 export default function RescisaoPage() {
   return (
     <div className="space-y-8">
+      <Breadcrumbs items={[{label:'Início',href:'/'},{label:'Rescisão CLT'}]} />
       {/* JSON-LD Schemas */}
       <script
         type="application/ld+json"
@@ -132,6 +180,10 @@ export default function RescisaoPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
 
       {/* Hero Section */}
@@ -442,6 +494,9 @@ export default function RescisaoPage() {
           </Link>
         </div>
       </section>
+      <div className="mt-8 pt-6 border-t border-gray-200">
+        <ShareButtons title="Calculadora de Rescisão CLT - Calculadora Trabalhista" />
+      </div>
     </div>
   );
 }

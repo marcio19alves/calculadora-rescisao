@@ -1,32 +1,42 @@
-'use client';
+"use client";
 
-import Script from 'next/script';
+import Script from "next/script";
+import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 
-interface AnalyticsProps {
-  gaId: string;
-}
+export default function Analytics({ gaId }: { gaId: string }) {
+  const pathname = usePathname();
 
-export default function Analytics({ gaId }: AnalyticsProps) {
-  if (!gaId || gaId.length === 0) {
-    return null;
-  }
+  useEffect(() => {
+    if (typeof window !== "undefined" && (window as any).gtag) {
+      (window as any).gtag("config", gaId, {
+        page_path: pathname,
+      });
+    }
+  }, [pathname, gaId]);
+
+  if (!gaId) return null;
 
   return (
     <>
       <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
         strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
       />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', '${gaId}', {
-            page_path: window.location.pathname,
-          });
-        `}
-      </Script>
+      <Script
+        id="google-analytics"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${gaId}', {
+              page_path: window.location.pathname,
+            });
+          `,
+        }}
+      />
     </>
   );
 }

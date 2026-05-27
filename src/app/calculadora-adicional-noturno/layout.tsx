@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Calculadora de Adicional Noturno CLT Grátis | CalcularRescisao",
+  title: "Calculadora de Adicional Noturno CLT Grátis | Calculadora Trabalhista",
   description:
     "Calcule online e grátis o adicional noturno CLT: 20% sobre hora normal, hora reduzida de 52min30s, cumulação com horas extras 50% e 100%. Resultado imediato, sem cadastro.",
   openGraph: {

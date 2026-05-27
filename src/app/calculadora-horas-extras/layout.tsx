@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Calculadora de Horas Extras 50% e 100% Grátis | CalcularRescisao",
+  title: "Calculadora de Horas Extras 50% e 100% Grátis | Calculadora Trabalhista",
   description:
     "Calcule online e grátis o valor das suas horas extras: 50% (dias úteis), 100% (domingos/feriados) e DSR. Simulador completo de horas extras CLT com adicional noturno. Resultado imediato, sem cadastro.",
   openGraph: {

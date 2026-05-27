@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import Breadcrumbs from "@/components/breadcrumbs";
+import ShareButtons from "@/components/ShareButtons";
 
 const FAQS = [
   { q: "Como calcular hora extra 50%?", r: "A hora extra 50% é paga quando o trabalho excede a jornada normal em dias úteis. O cálculo é: salário-hora × 1,5. Exemplo: salário de R$ 3.600 (R$ 16,36/hora) × 1,5 = R$ 24,54 por hora extra. Use nossa calculadora acima para simular." },
@@ -71,6 +73,7 @@ export default function HorasExtrasPage() {
 
   return (
     <div className="space-y-8">
+      <Breadcrumbs items={[{label:'Início',href:'/'},{label:'Horas Extras'}]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJson) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareJson) }} />
 
@@ -215,6 +218,9 @@ export default function HorasExtrasPage() {
           </a>
         </div>
       </section>
+      <div className="mt-8 pt-6 border-t border-gray-200">
+        <ShareButtons title="Calculadora de Horas Extras - Calculadora Trabalhista" />
+      </div>
     </div>
   );
 }

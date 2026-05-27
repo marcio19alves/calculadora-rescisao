@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import Breadcrumbs from "@/components/breadcrumbs";
+import ShareButtons from "@/components/ShareButtons";
 
 const FAQS = [
   { q: "Como calcular férias CLT?", r: "Para calcular as férias CLT, multiplique o salário por 1/3 (adicional constitucional) e some ao valor base. Exemplo: salário de R$ 3.000 ÷ 30 dias × 30 dias = R$ 3.000 de férias + R$ 1.000 de 1/3 = R$ 4.000. Sobre esse valor incide INSS, mas não IRRF para valores até R$ 4.664,68." },
@@ -100,6 +102,7 @@ export default function FeriasPage() {
 
   return (
     <div className="space-y-8">
+      <Breadcrumbs items={[{label:'Início',href:'/'},{label:'Férias'}]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJson) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareJson) }} />
 
@@ -248,6 +251,9 @@ export default function FeriasPage() {
           </a>
         </div>
       </section>
+      <div className="mt-8 pt-6 border-t border-gray-200">
+        <ShareButtons title="Calculadora de Férias CLT - Calculadora Trabalhista" />
+      </div>
     </div>
   );
 }

@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
+import ShareButtons from "@/components/ShareButtons";
 
 export const metadata: Metadata = {
-  title: "Política de Privacidade | CalcularRescisao",
+  title: "Política de Privacidade | Calculadora Trabalhista",
   description:
-    "Política de privacidade do CalcularRescisao. Não coletamos dados pessoais — todos os cálculos são processados no seu navegador.",
+    "Política de privacidade do Calculadora Trabalhista. Não coletamos dados pessoais — todos os cálculos são processados no seu navegador.",
   openGraph: {
-    title: "Política de Privacidade | CalcularRescisao",
+    title: "Política de Privacidade | Calculadora Trabalhista",
     description:
       "Sua privacidade protegida: cálculos processados no navegador, sem envio de dados.",
   },
@@ -46,7 +47,7 @@ export default function PrivacidadePage() {
           <h2 className="text-xl font-bold">1. Dados que coletamos</h2>
           <p className="text-gray-600 leading-relaxed">
             <strong>Não coletamos dados pessoais.</strong> As calculadoras do
-            CalcularRescisao funcionam inteiramente no lado do cliente
+            Calculadora Trabalhista funcionam inteiramente no lado do cliente
             (client-side). Os valores que você insere nos campos — salário,
             data de admissão, data de demissão — <strong>nunca</strong> saem do
             seu navegador.
@@ -149,10 +150,10 @@ export default function PrivacidadePage() {
             <li>
               Entrar em contato conosco para esclarecimentos pelo e-mail{" "}
               <a
-                href="mailto:contato@calcularrescisao.com.br"
+                href="mailto:contato@calculadoratrabalhista.net.br"
                 className="text-blue-600 underline"
               >
-                contato@calcularrescisao.com.br
+                contato@calculadoratrabalhista.net.br
               </a>
             </li>
           </ul>
@@ -179,20 +180,24 @@ export default function PrivacidadePage() {
           entre em contato:
         </p>
         <a
-          href="mailto:contato@calcularrescisao.com.br"
+          href="mailto:contato@calculadoratrabalhista.net.br"
           className="inline-flex items-center gap-2 bg-blue-600 text-white px-5 py-2.5 rounded-xl text-sm font-semibold hover:bg-blue-700 transition-colors shadow-sm"
         >
-          ✉️ contato@calcularrescisao.com.br
+          ✉️ contato@calculadoratrabalhista.net.br
         </a>
       </section>
 
       {/* Disclaimer */}
       <section className="text-center text-xs text-gray-400">
         <p>
-          © {new Date().getFullYear()} CalcularRescisao. Todas as
+          © {new Date().getFullYear()} Calculadora Trabalhista. Todas as
           calculadoras são gratuitas.
         </p>
       </section>
+
+      <div className="mt-8 pt-6 border-t border-gray-200">
+        <ShareButtons title="Política de Privacidade - Calculadora Trabalhista" />
+      </div>
     </div>
   );
 }

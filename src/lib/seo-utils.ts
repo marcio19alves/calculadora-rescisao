@@ -8,6 +8,12 @@ type FAQQuestion = {
   answer: string;
 };
 
+type HowToStep = {
+  name: string;
+  text: string;
+  url?: string;
+};
+
 /**
  * Gera JSON-LD de Organization (marca/empresa)
  */
@@ -18,7 +24,7 @@ export function generateOrganizationSchema(
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'CalcularRescisao',
-    url: 'https://calcularrescisao.com.br',
+    url: 'https://calculadoratrabalhista.net.br',
     description:
       'Calculadoras trabalhistas online grátis. Calcule rescisão, férias, FGTS e mais.',
     ...overrides,
@@ -86,5 +92,30 @@ export function generateFAQSchema(
         text: q.answer,
       },
     })),
+  };
+}
+
+/**
+ * Gera JSON-LD de HowTo a partir de uma lista de passos
+ */
+export function generateHowToSchema(
+  name: string,
+  description: string,
+  steps: HowToStep[],
+  overrides: Record<string, unknown> = {},
+): Record<string, unknown> {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name,
+    description,
+    step: steps.map((step, index) => ({
+      '@type': 'HowToStep',
+      position: index + 1,
+      name: step.name,
+      text: step.text,
+      ...(step.url ? { url: step.url } : {}),
+    })),
+    ...overrides,
   };
 }

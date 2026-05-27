@@ -1,5 +1,6 @@
 "use client";
-
+import Breadcrumbs from "@/components/breadcrumbs";
+import ShareButtons from "@/components/ShareButtons";
 import { useState } from "react";
 
 const FAQS = [
@@ -67,6 +68,7 @@ export default function JurosPage() {
 
   return (
     <div className="space-y-8">
+      <Breadcrumbs items={[{label:'Início',href:'/'},{label:'Juros Compostos'}]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJson) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareJson) }} />
 
@@ -216,6 +218,10 @@ export default function JurosPage() {
           <strong>⚠️ Aviso importante:</strong> A calculadora é uma ferramenta educacional. Investimentos reais têm taxas variáveis e riscos. Consulte um profissional para decisões financeiras.
         </div>
       </article>
+
+      <div className="mt-8 pt-6 border-t border-gray-200">
+        <ShareButtons title="Calculadora de Juros Compostos - Calculadora Trabalhista" />
+      </div>
     </div>
   );
 }

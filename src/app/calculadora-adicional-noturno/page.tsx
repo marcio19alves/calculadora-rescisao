@@ -1,5 +1,7 @@
 "use client";
 import { useState } from "react";
+import Breadcrumbs from "@/components/breadcrumbs";
+import ShareButtons from "@/components/ShareButtons";
 
 const FAQS = [
   { q: "Como calcular adicional noturno?", r: "O adicional noturno é de 20% sobre a hora normal para o trabalho entre 22h e 5h. O cálculo: salário-hora × 0,20. Exemplo: R$ 16,36/h × 20% = R$ 3,27 de adicional. Cada hora noturna tem 52 minutos e 30 segundos (não 60 min), o que significa que 7h noturnas equivalem a 8h diurnas." },
@@ -75,6 +77,7 @@ export default function AdicionalNoturnoPage() {
 
   return (
     <div className="space-y-8">
+      <Breadcrumbs items={[{label:'Início',href:'/'},{label:'Adicional Noturno'}]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJson) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SOFTWARE_SCHEMA) }} />
 
@@ -193,6 +196,9 @@ export default function AdicionalNoturnoPage() {
           <strong>⚠️ Aviso importante:</strong> Valores aproximados. Convenções coletivas podem ter percentuais diferentes. Consulte seu sindicato.
         </div>
       </article>
+      <div className="mt-8 pt-6 border-t border-gray-200">
+        <ShareButtons title="Calculadora de Adicional Noturno - Calculadora Trabalhista" />
+      </div>
     </div>
   );
 }

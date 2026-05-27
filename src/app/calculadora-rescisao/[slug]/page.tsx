@@ -4,6 +4,7 @@ import Link from "next/link";
 import { cargos } from "@/lib/cbo-data";
 import {
   generateFAQSchema,
+  generateHowToSchema,
   generateSoftwareSchema,
   generateBreadcrumbSchema,
 } from "@/lib/seo-utils";
@@ -24,7 +25,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   const cargo = cargos.find((c) => c.slug === params.slug);
   if (!cargo) return {};
 
-  const title = `Calculadora de Rescisão para ${cargo.nome} | CalcularRescisao`;
+  const title = `Calculadora de Rescisão para ${cargo.nome} | Calculadora Trabalhista`;
   const description = `Calcule online e grátis a rescisão trabalhista CLT para ${cargo.nomeMasculino}. Simulador completo: saldo de salário, férias, 13º, FGTS com multa de 40%. Resultado imediato, sem cadastro.`;
 
   return {
@@ -57,7 +58,7 @@ export default function RescisaoCargoPage({
     notFound();
   }
 
-  const baseUrl = "https://calcularrescisao.com.br";
+  const baseUrl = "https://calculadoratrabalhista.net.br";
   const pageUrl = `${baseUrl}/calculadora-rescisao/${cargo.slug}`;
 
   // Schemas
@@ -93,6 +94,37 @@ export default function RescisaoCargoPage({
     { name: `Rescisão para ${cargo.nome}`, item: pageUrl },
   ]);
 
+  const howToSchema = generateHowToSchema(
+    `Como calcular a rescisão de ${cargo.nomeMasculino} em 6 passos`,
+    `Guia passo a passo para calcular a rescisão trabalhista CLT de ${cargo.nomeMasculino} com todas as verbas rescisórias.`,
+    [
+      {
+        name: "Calcule o saldo de salário",
+        text: `Divida o salário de ${cargo.nomeMasculino} por 30 e multiplique pelos dias trabalhados no mês da demissão. Isso corresponde ao saldo de salário.`,
+      },
+      {
+        name: "Calcule o aviso prévio",
+        text: "Considere 30 dias de aviso prévio + 3 dias para cada ano completo de trabalho, limitado a 90 dias no total. O aviso pode ser indenizado ou trabalhado.",
+      },
+      {
+        name: "Calcule as férias vencidas e proporcionais",
+        text: "Férias vencidas: salário + 1/3 constitucional. Férias proporcionais: (salário / 12 × meses trabalhados no período aquisitivo) + 1/3 constitucional.",
+      },
+      {
+        name: "Calcule o 13º salário proporcional",
+        text: "Divida o salário por 12 e multiplique pelos meses trabalhados no ano da demissão. Cada fração igual ou superior a 15 dias conta como 1 mês.",
+      },
+      {
+        name: "Calcule o FGTS e a multa de 40%",
+        text: "Calcule 8% do salário mensal para depósitos de FGTS. Na demissão sem justa causa, adicione multa de 40% sobre o saldo total do FGTS.",
+      },
+      {
+        name: "Aplique os descontos de INSS e IRRF",
+        text: "Sobre as verbas rescisórias, aplique os descontos de INSS (tabela progressiva) e IRRF (tabela progressiva com deduções). O 1/3 de férias não sofre INSS.",
+      },
+    ],
+  );
+
   // Lista de outros cargos (menos o atual)
   const outrosCargos = cargos.filter((c) => c.slug !== cargo.slug);
 
@@ -110,6 +142,10 @@ export default function RescisaoCargoPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
 
       {/* Hero Section */}

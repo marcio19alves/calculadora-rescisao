@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: "/_next/",
     },
-    sitemap: "https://calcularrescisao.com.br/sitemap.xml",
+    sitemap: "https://calculadoratrabalhista.net.br/sitemap.xml",
   };
 }

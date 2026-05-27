@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ShareButtons from "@/components/ShareButtons";
 
 export const metadata: Metadata = {
-  title: "Contato | CalcularRescisao",
+  title: "Contato | Calculadora Trabalhista",
   description:
-    "Entre em contato com o CalcularRescisao. Sugestões de calculadoras, reportar erros, parcerias e mais.",
+    "Entre em contato com o Calculadora Trabalhista. Sugestões de calculadoras, reportar erros, parcerias e mais.",
   openGraph: {
-    title: "Contato | CalcularRescisao",
+    title: "Contato | Calculadora Trabalhista",
     description:
       "Tem uma sugestão? Encontrou um erro? Quer fazer parceria? Fale conosco.",
   },
@@ -35,10 +36,10 @@ export default function ContatoPage() {
         <div>
           <h2 className="text-xl font-bold mb-2">Nosso e-mail</h2>
           <a
-            href="mailto:contato@calcularrescisao.com.br"
+            href="mailto:contato@calculadoratrabalhista.net.br"
             className="text-blue-600 font-semibold text-lg sm:text-xl hover:text-blue-800 transition-colors"
           >
-            contato@calcularrescisao.com.br
+            contato@calculadoratrabalhista.net.br
           </a>
         </div>
         <p className="text-gray-500 text-sm">Respondemos em até 48 horas úteis.</p>
@@ -63,7 +64,7 @@ export default function ContatoPage() {
             (sugestao) => (
               <Link
                 key={sugestao}
-                href={`mailto:contato@calcularrescisao.com.br?subject=Sugestão: Calculadora de ${sugestao}`}
+                href={`mailto:contato@calculadoratrabalhista.net.br?subject=Sugestão: Calculadora de ${sugestao}`}
                 className="bg-white border border-gray-200 rounded-lg px-3 py-1.5 text-xs font-medium text-gray-600 hover:border-blue-300 hover:text-blue-600 transition-all"
               >
                 {sugestao}
@@ -97,6 +98,10 @@ export default function ContatoPage() {
           ))}
         </div>
       </section>
+
+      <div className="mt-8 pt-6 border-t border-gray-200">
+        <ShareButtons title="Fale Conosco - Calculadora Trabalhista" />
+      </div>
     </div>
   );
 }

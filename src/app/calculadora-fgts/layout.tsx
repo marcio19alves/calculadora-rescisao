@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Calculadora de FGTS com Multa 40% Grátis | CalcularRescisao",
+  title: "Calculadora de FGTS com Multa 40% Grátis | Calculadora Trabalhista",
   description:
     "Calcule online e grátis a multa de 40% do FGTS. Simulador completo para demissão sem justa causa e rescisão por comum acordo. Informe o saldo e descubra quanto você tem direito a receber.",
   openGraph: {
