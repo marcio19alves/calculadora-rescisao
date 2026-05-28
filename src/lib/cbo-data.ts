@@ -319,4 +319,460 @@ export const cargos: CargoInfo[] = [
     descricao:
       "Mecânicos trabalham em oficinas e concessionárias com jornada de 8 horas. Na rescisão, adicional de insalubridade de 20% (grau médio) por exposição a óleos e graxas e horas extras habituais são direitos comuns.",
   },
+  {
+    slug: "servente-de-obras",
+    nome: "Servente de Obras",
+    nomeMasculino: "servente de obras",
+    nomeFeminino: "servente de obras",
+    descricao:
+      "Serventes de obras trabalham na construção civil auxiliando pedreiros e mestres de obras. Na rescisão, é comum haver horas extras habituais, adicional de insalubridade e adicional de periculosidade que devem integrar o cálculo das verbas rescisórias.",
+  },
+  {
+    slug: "pintor",
+    nome: "Pintor",
+    nomeMasculino: "pintor",
+    nomeFeminino: "pintora",
+    descricao:
+      "Pintores da construção civil trabalham com jornada de 8 horas diárias. Na rescisão, adicional de insalubridade de 20% sobre o salário mínimo por exposição a solventes e tintas, além de horas extras habituais, devem ser incluídos no cálculo.",
+  },
+  {
+    slug: "encanador",
+    nome: "Encanador",
+    nomeMasculino: "encanador",
+    nomeFeminino: "encanadora",
+    descricao:
+      "Encanadores atuam na instalação e manutenção de sistemas hidráulicos. Na rescisão, adicional de periculosidade de 30% sobre o salário base e horas extras habituais são verbas comuns que devem ser calculadas corretamente.",
+  },
+  {
+    slug: "gesseiro",
+    nome: "Gesseiro",
+    nomeMasculino: "gesseiro",
+    nomeFeminino: "gesseira",
+    descricao:
+      "Gesseiros atuam na construção civil com instalação de forros e drywall. Na rescisão, adicional de insalubridade de 20% por exposição ao pó de gesso e horas extras habituais são direitos comuns na categoria.",
+  },
+  {
+    slug: "mestre-de-obras",
+    nome: "Mestre de Obras",
+    nomeMasculino: "mestre de obras",
+    nomeFeminino: "mestra de obras",
+    descricao:
+      "Mestres de obras supervisionam equipes na construção civil com jornada de 8 horas. Na rescisão, adicional de periculosidade, horas extras e gratificação de função devem ser considerados no cálculo das verbas rescisórias.",
+  },
+  {
+    slug: "operador-de-maquinas",
+    nome: "Operador de Máquinas",
+    nomeMasculino: "operador de máquinas",
+    nomeFeminino: "operadora de máquinas",
+    descricao:
+      "Operadores de máquinas pesadas atuam em construção e mineração. Na rescisão, adicional de periculosidade de 30% sobre o salário base e horas extras habituais devem ser incluídos no cálculo das verbas rescisórias.",
+  },
+  {
+    slug: "camareira",
+    nome: "Camareira",
+    nomeMasculino: "camareiro",
+    nomeFeminino: "camareira",
+    descricao:
+      "Camareiras trabalham em hotéis com jornada de 6 a 8 horas. Na rescisão, adicional de insalubridade de 20% sobre o salário mínimo e horas extras habituais são direitos comuns que devem ser calculados.",
+  },
+  {
+    slug: "cozinheiro",
+    nome: "Cozinheiro",
+    nomeMasculino: "cozinheiro",
+    nomeFeminino: "cozinheira",
+    descricao:
+      "Cozinheiros atuam em restaurantes, hotéis e hospitais com jornada de 8 horas. Na rescisão, adicional de insalubridade de 20% por exposição ao calor excessivo e horas extras habituais são verbas comuns na categoria.",
+  },
+  {
+    slug: "garcom",
+    nome: "Garçom",
+    nomeMasculino: "garçom",
+    nomeFeminino: "garçonete",
+    descricao:
+      "Garçons trabalham em bares e restaurantes com salário variável composto por gorjetas. Na rescisão, a média de gorjetas dos últimos 12 meses e horas extras devem ser incluídas no cálculo das verbas rescisórias.",
+  },
+  {
+    slug: "cabeleireiro",
+    nome: "Cabeleireiro",
+    nomeMasculino: "cabeleireiro",
+    nomeFeminino: "cabeleireira",
+    descricao:
+      "Cabeleireiros empregados em salões de beleza têm jornada de 6 a 8 horas. Na rescisão, comissões sobre serviços e vendas de produtos devem integrar o cálculo das verbas rescisórias.",
+  },
+  {
+    slug: "manicure",
+    nome: "Manicure",
+    nomeMasculino: "manicure",
+    nomeFeminino: "manicure",
+    descricao:
+      "Manicures empregadas em salões de beleza têm jornada de 6 horas. Na rescisão, comissões sobre serviços e adicional de insalubridade de 20% por exposição a produtos químicos devem ser considerados.",
+  },
+  {
+    slug: "lavadeira",
+    nome: "Lavadeira",
+    nomeMasculino: "lavadeiro",
+    nomeFeminino: "lavadeira",
+    descricao:
+      "Lavadeiras trabalham em lavanderias comerciais com jornada de 8 horas. Na rescisão, adicional de insalubridade de 20% por contato com produtos químicos e horas extras habituais devem ser incluídos no cálculo.",
+  },
+  {
+    slug: "passadeira",
+    nome: "Passadeira",
+    nomeMasculino: "passadeiro",
+    nomeFeminino: "passadeira",
+    descricao:
+      "Passadeiras atuam em lavanderias e empresas de serviços com jornada de 8 horas. Na rescisão, adicional de insalubridade de 20% e horas extras habituais são direitos comuns na categoria.",
+  },
+  {
+    slug: "atendente",
+    nome: "Atendente",
+    nomeMasculino: "atendente",
+    nomeFeminino: "atendente",
+    descricao:
+      "Atendentes trabalham no comércio e serviços com jornada de 6 a 8 horas. Na rescisão, comissões sobre vendas e horas extras habituais devem ser incluídas no cálculo das verbas rescisórias.",
+  },
+  {
+    slug: "balconista",
+    nome: "Balconista",
+    nomeMasculino: "balconista",
+    nomeFeminino: "balconista",
+    descricao:
+      "Balconistas atuam no comércio varejista com jornada de 6 a 8 horas. Na rescisão, comissões sobre vendas e horas extras aos domingos e feriados devem integrar o cálculo das verbas rescisórias.",
+  },
+  {
+    slug: "frentista",
+    nome: "Frentista",
+    nomeMasculino: "frentista",
+    nomeFeminino: "frentista",
+    descricao:
+      "Frentistas trabalham em postos de combustível com escala de 6x1. Na rescisão, adicional de periculosidade de 30% sobre o salário base e adicional noturno frequente devem ser considerados no cálculo.",
+  },
+  {
+    slug: "repositor",
+    nome: "Repositor",
+    nomeMasculino: "repositor",
+    nomeFeminino: "repositora",
+    descricao:
+      "Repositores atuam em supermercados com jornada de 8 horas. Na rescisão, horas extras habituais e adicional noturno para turnos de reposição noturna são verbas comuns na categoria.",
+  },
+  {
+    slug: "conferente",
+    nome: "Conferente",
+    nomeMasculino: "conferente",
+    nomeFeminino: "conferente",
+    descricao:
+      "Conferentes trabalham em estoques e almoxarifados conferindo mercadorias. Na rescisão, horas extras habituais e adicional de insalubridade são direitos comuns na categoria.",
+  },
+  {
+    slug: "empacotador",
+    nome: "Empacotador",
+    nomeMasculino: "empacotador",
+    nomeFeminino: "empacotadora",
+    descricao:
+      "Empacotadores atuam em supermercados com jornada parcial de 6 horas. Na rescisão, horas extras habituais e adicional noturno são verbas que devem ser consideradas no cálculo.",
+  },
+  {
+    slug: "acougueiro",
+    nome: "Açougueiro",
+    nomeMasculino: "açougueiro",
+    nomeFeminino: "açougueira",
+    descricao:
+      "Açougueiros trabalham em supermercados e açougues com jornada de 8 horas. Na rescisão, adicional de insalubridade de 20% por manuseio de carnes e horas extras habituais devem ser incluídos.",
+  },
+  {
+    slug: "secretaria",
+    nome: "Secretária",
+    nomeMasculino: "secretário",
+    nomeFeminino: "secretária",
+    descricao:
+      "Secretárias atuam em escritórios com jornada de 8 horas. Na rescisão, horas extras habituais e gratificação de função são verbas comuns que devem ser incluídas no cálculo.",
+  },
+  {
+    slug: "office-boy",
+    nome: "Office Boy",
+    nomeMasculino: "office boy",
+    nomeFeminino: "office girl",
+    descricao:
+      "Office boys atuam em escritórios realizando entregas externas com jornada de 8 horas. Na rescisão, vale-transporte que integra o salário e horas extras devem ser considerados no cálculo.",
+  },
+  {
+    slug: "almoxarife",
+    nome: "Almoxarife",
+    nomeMasculino: "almoxarife",
+    nomeFeminino: "almoxarife",
+    descricao:
+      "Almoxarifes gerenciam estoques e almoxarifados com jornada de 8 horas. Na rescisão, horas extras habituais e adicional de insalubridade são direitos comuns na categoria.",
+  },
+  {
+    slug: "estoquista",
+    nome: "Estoquista",
+    nomeMasculino: "estoquista",
+    nomeFeminino: "estoquista",
+    descricao:
+      "Estoquistas controlam inventários em empresas com jornada de 8 horas. Na rescisão, horas extras habituais e adicional de insalubridade por trabalho em ambientes frios ou úmidos devem ser incluídos.",
+  },
+  {
+    slug: "telefonista",
+    nome: "Telefonista",
+    nomeMasculino: "telefonista",
+    nomeFeminino: "telefonista",
+    descricao:
+      "Telefonistas trabalham com jornada de 6 horas regulamentar. Na rescisão, horas extras acima da jornada reduzida e adicional noturno para turnos estendidos devem ser calculados.",
+  },
+  {
+    slug: "digitador",
+    nome: "Digitador",
+    nomeMasculino: "digitador",
+    nomeFeminino: "digitadora",
+    descricao:
+      "Digitadores atuam em escritórios com jornada de 8 horas. Na rescisão, horas extras habituais e adicional de insalubridade de 20% por trabalho repetitivo podem ser considerados no cálculo.",
+  },
+  {
+    slug: "auxiliar-contabil",
+    nome: "Auxiliar Contábil",
+    nomeMasculino: "auxiliar contábil",
+    nomeFeminino: "auxiliar contábil",
+    descricao:
+      "Auxiliares contábeis trabalham em escritórios de contabilidade com jornada de 8 horas. Na rescisão, horas extras em períodos de fechamento fiscal e PLR são verbas comuns na categoria.",
+  },
+  {
+    slug: "auxiliar-fiscal",
+    nome: "Auxiliar Fiscal",
+    nomeMasculino: "auxiliar fiscal",
+    nomeFeminino: "auxiliar fiscal",
+    descricao:
+      "Auxiliares fiscais atuam em departamentos fiscais com jornada de 8 horas. Na rescisão, horas extras habituais em períodos de obrigações acessórias e PLR devem ser incluídas no cálculo.",
+  },
+  {
+    slug: "tecnico-de-radiologia",
+    nome: "Técnico de Radiologia",
+    nomeMasculino: "técnico de radiologia",
+    nomeFeminino: "técnica de radiologia",
+    descricao:
+      "Técnicos de radiologia trabalham em hospitais com jornada de 8 horas. Na rescisão, adicional de insalubridade de 40% (grau máximo) por exposição à radiação e adicional noturno são direitos previstos em lei.",
+  },
+  {
+    slug: "fisioterapeuta",
+    nome: "Fisioterapeuta",
+    nomeMasculino: "fisioterapeuta",
+    nomeFeminino: "fisioterapeuta",
+    descricao:
+      "Fisioterapeutas atuam em clínicas e hospitais com jornada de 6 a 8 horas. Na rescisão, horas extras habituais e adicional de insalubridade por contato com pacientes devem ser considerados.",
+  },
+  {
+    slug: "biomedico",
+    nome: "Biomédico",
+    nomeMasculino: "biomédico",
+    nomeFeminino: "biomédica",
+    descricao:
+      "Biomédicos trabalham em laboratórios com jornada de 6 a 8 horas. Na rescisão, adicional de insalubridade de 20% por manuseio de materiais biológicos e horas extras são verbas comuns.",
+  },
+  {
+    slug: "veterinario",
+    nome: "Veterinário",
+    nomeMasculino: "veterinário",
+    nomeFeminino: "veterinária",
+    descricao:
+      "Veterinários empregados em clínicas têm jornada de 6 a 8 horas. Na rescisão, horas extras habituais e adicional de insalubridade por contato com animais devem ser considerados no cálculo.",
+  },
+  {
+    slug: "auxiliar-de-veterinario",
+    nome: "Auxiliar de Veterinário",
+    nomeMasculino: "auxiliar de veterinário",
+    nomeFeminino: "auxiliar de veterinária",
+    descricao:
+      "Auxiliares de veterinária trabalham em clínicas e pet shops. Na rescisão, horas extras habituais e adicional de insalubridade são direitos comuns que devem ser calculados.",
+  },
+  {
+    slug: "cuidador-de-idosos",
+    nome: "Cuidador de Idosos",
+    nomeMasculino: "cuidador de idosos",
+    nomeFeminino: "cuidadora de idosos",
+    descricao:
+      "Cuidadores de idosos trabalham em regime de 12x36 ou plantão. Na rescisão, adicional noturno, horas extras e adicional de insalubridade são verbas comuns na categoria.",
+  },
+  {
+    slug: "massoterapeuta",
+    nome: "Massoterapeuta",
+    nomeMasculino: "massoterapeuta",
+    nomeFeminino: "massoterapeuta",
+    descricao:
+      "Massoterapeutas empregados em clínicas e spas têm jornada de 6 a 8 horas. Na rescisão, comissões sobre serviços e horas extras habituais devem ser incluídas no cálculo das verbas.",
+  },
+  {
+    slug: "caminhoneiro",
+    nome: "Caminhoneiro",
+    nomeMasculino: "caminhoneiro",
+    nomeFeminino: "caminhoneira",
+    descricao:
+      "Caminhoneiros têm jornada especial de 8 horas prorrogáveis. Na rescisão, horas extras habituais, adicional noturno e adicional de periculosidade são verbas comuns que devem ser calculadas.",
+  },
+  {
+    slug: "entregador",
+    nome: "Entregador",
+    nomeMasculino: "entregador",
+    nomeFeminino: "entregadora",
+    descricao:
+      "Entregadores trabalham com jornada de 8 horas realizando entregas. Na rescisão, comissões por entrega e horas extras habituais devem integrar o cálculo das verbas rescisórias.",
+  },
+  {
+    slug: "motoboy",
+    nome: "Motoboy",
+    nomeMasculino: "motoboy",
+    nomeFeminino: "motogirl",
+    descricao:
+      "Motoboys trabalham com jornada de 8 horas realizando entregas rápidas. Na rescisão, adicional de periculosidade de 30% sobre o salário base e horas extras devem ser incluídos no cálculo.",
+  },
+  {
+    slug: "operador-de-empilhadeira",
+    nome: "Operador de Empilhadeira",
+    nomeMasculino: "operador de empilhadeira",
+    nomeFeminino: "operadora de empilhadeira",
+    descricao:
+      "Operadores de empilhadeira atuam em galpões logísticos com jornada de 8 horas. Na rescisão, adicional de periculosidade de 30% sobre o salário base e horas extras são direitos comuns.",
+  },
+  {
+    slug: "ajudante-de-carga",
+    nome: "Ajudante de Carga",
+    nomeMasculino: "ajudante de carga",
+    nomeFeminino: "ajudante de carga",
+    descricao:
+      "Ajudantes de carga trabalham em armazéns com jornada de 8 horas. Na rescisão, horas extras habituais e adicional de insalubridade são verbas comuns na categoria.",
+  },
+  {
+    slug: "conferente-de-carga",
+    nome: "Conferente de Carga",
+    nomeMasculino: "conferente de carga",
+    nomeFeminino: "conferente de carga",
+    descricao:
+      "Conferentes de carga atuam em centros de distribuição com jornada de 8 horas. Na rescisão, horas extras habituais e adicional noturno para turnos alternados devem ser considerados.",
+  },
+  {
+    slug: "operador-de-producao",
+    nome: "Operador de Produção",
+    nomeMasculino: "operador de produção",
+    nomeFeminino: "operadora de produção",
+    descricao:
+      "Operadores de produção trabalham em fábricas com jornada de 8 horas em turnos. Na rescisão, horas extras habituais, adicional noturno e adicional de insalubridade são direitos comuns.",
+  },
+  {
+    slug: "soldador",
+    nome: "Soldador",
+    nomeMasculino: "soldador",
+    nomeFeminino: "soldadora",
+    descricao:
+      "Soldadores atuam na indústria com jornada de 8 horas. Na rescisão, adicional de periculosidade de 30% sobre o salário base e adicional de insalubridade devem ser considerados.",
+  },
+  {
+    slug: "montador-de-moveis",
+    nome: "Montador de Móveis",
+    nomeMasculino: "montador de móveis",
+    nomeFeminino: "montadora de móveis",
+    descricao:
+      "Montadores de móveis trabalham em lojas e residências com jornada de 8 horas. Na rescisão, horas extras habituais e comissões por montagem devem ser incluídas no cálculo.",
+  },
+  {
+    slug: "serralheiro",
+    nome: "Serralheiro",
+    nomeMasculino: "serralheiro",
+    nomeFeminino: "serralheira",
+    descricao:
+      "Serralheiros atuam na metalurgia com jornada de 8 horas. Na rescisão, adicional de periculosidade de 30% sobre o salário base e adicional de insalubridade são verbas comuns na categoria.",
+  },
+  {
+    slug: "marceneiro",
+    nome: "Marceneiro",
+    nomeMasculino: "marceneiro",
+    nomeFeminino: "marceneira",
+    descricao:
+      "Marceneiros trabalham com fabricação de móveis sob medida. Na rescisão, horas extras habituais e adicional de insalubridade de 20% por exposição à poeira de madeira devem ser incluídos.",
+  },
+  {
+    slug: "desenvolvedor",
+    nome: "Desenvolvedor",
+    nomeMasculino: "desenvolvedor",
+    nomeFeminino: "desenvolvedora",
+    descricao:
+      "Desenvolvedores de software têm salários acima da média e regime de home office frequente. Na rescisão, PLR, banco de horas e verbas de sobreaviso devem ser considerados no cálculo.",
+  },
+  {
+    slug: "analista-de-dados",
+    nome: "Analista de Dados",
+    nomeMasculino: "analista de dados",
+    nomeFeminino: "analista de dados",
+    descricao:
+      "Analistas de dados atuam com tecnologia e geralmente têm PLR e banco de horas. Na rescisão, bônus de desempenho e PLR são verbas que devem ser incluídas no cálculo das verbas rescisórias.",
+  },
+  {
+    slug: "designer-grafico",
+    nome: "Designer Gráfico",
+    nomeMasculino: "designer gráfico",
+    nomeFeminino: "designer gráfica",
+    descricao:
+      "Designers gráficos trabalham em agências com jornada de 8 horas. Na rescisão, horas extras em períodos de campanha e PLR são verbas comuns na categoria.",
+  },
+  {
+    slug: "jornalista",
+    nome: "Jornalista",
+    nomeMasculino: "jornalista",
+    nomeFeminino: "jornalista",
+    descricao:
+      "Jornalistas têm piso salarial da categoria e jornada de 5 horas diárias (7 horas para externa). Na rescisão, horas extras acima da jornada reduzida e adicional noturno devem ser calculados.",
+  },
+  {
+    slug: "publicitario",
+    nome: "Publicitário",
+    nomeMasculino: "publicitário",
+    nomeFeminino: "publicitária",
+    descricao:
+      "Publicitários atuam em agências com jornada de 8 horas. Na rescisão, horas extras em períodos de campanha e comissionamento sobre contas devem ser considerados no cálculo.",
+  },
+  {
+    slug: "baba",
+    nome: "Babá",
+    nomeMasculino: "babá",
+    nomeFeminino: "babá",
+    descricao:
+      "Babás trabalham em residências com jornada de 8 horas. Na rescisão, horas extras habituais, adicional noturno e vale-transporte integram o cálculo das verbas rescisórias.",
+  },
+  {
+    slug: "diarista",
+    nome: "Diarista",
+    nomeMasculino: "diarista",
+    nomeFeminino: "diarista",
+    descricao:
+      "Diaristas trabalham como empregadas domésticas em residências. Na rescisão, horas extras e adicional de insalubridade são direitos que devem ser considerados no cálculo.",
+  },
+  {
+    slug: "caseiro",
+    nome: "Caseiro",
+    nomeMasculino: "caseiro",
+    nomeFeminino: "caseira",
+    descricao:
+      "Caseiros trabalham em sítios e chácaras com moradia no local. Na rescisão, o valor da moradia pode integrar o salário in natura para cálculo das verbas rescisórias.",
+  },
+  {
+    slug: "piscineiro",
+    nome: "Piscineiro",
+    nomeMasculino: "piscineiro",
+    nomeFeminino: "piscineira",
+    descricao:
+      "Piscineiros atuam na manutenção de piscinas em condomínios e clubes. Na rescisão, horas extras habituais e adicional de insalubridade por exposição a produtos químicos são direitos comuns.",
+  },
+  {
+    slug: "monitor-de-recreacao",
+    nome: "Monitor de Recreação",
+    nomeMasculino: "monitor de recreação",
+    nomeFeminino: "monitora de recreação",
+    descricao:
+      "Monitores de recreação trabalham em clubes e hotéis com jornada de 8 horas. Na rescisão, horas extras aos finais de semana e feriados são verbas comuns na categoria.",
+  },
+  {
+    slug: "motorista-de-onibus",
+    nome: "Motorista de Ônibus",
+    nomeMasculino: "motorista de ônibus",
+    nomeFeminino: "motorista de ônibus",
+    descricao:
+      "Motoristas de ônibus têm jornada especial de 7 horas ao volante. Na rescisão, horas extras habituais, horas de sobreaviso e adicional noturno são verbas comuns na categoria.",
+  },
 ];
